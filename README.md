@@ -1,4 +1,4 @@
-# Insert Lesson Title
+# React and Axios
 
 ## Dependencies
 
@@ -10,10 +10,13 @@ Refer to the following markdown file for the respective sections of the class:
 ## Lesson Objectives
 
 Learners will understand:
-- Insert the knowledge to be acquired
+- How HTTP works.
+- The anatomy of a HTTP Request and Response (Such as URL, Verb, Headers, and Body).
+- The different ways to perform HTTP Requests (XMLHttpRequest, Fetch API and Axios).
 
 Learners will be able to:
-- Insert the skillset to be acquired
+- Perform HTTP GET, POST, PUT, PATCH, and DELETE using Axios.
+- Perform HTTP Request with Autorization Header (Basic & Bearer).
 
 
 ## Lesson Plan
