@@ -13,10 +13,12 @@ Learners will understand:
 - How HTTP works.
 - The anatomy of a HTTP Request and Response (Such as URL, Verb, Headers, and Body).
 - The different ways to perform HTTP Requests (XMLHttpRequest, Fetch API and Axios).
+- What are Promises in JavaScript.
 
 Learners will be able to:
 - Perform HTTP GET, POST, PUT, PATCH, and DELETE using Axios.
 - Perform HTTP Request with Autorization Header (Basic & Bearer).
+- Implement `async/await` and `.then().catch()` to retrieve the response data in axios.
 
 
 ## Lesson Plan
