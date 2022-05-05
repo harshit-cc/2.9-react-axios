@@ -17,7 +17,7 @@ Learners will understand:
 
 Learners will be able to:
 - Perform HTTP GET, POST, PUT, PATCH, and DELETE using Axios.
-- Perform HTTP Request with Autorization Header (Basic & Bearer).
+- Perform HTTP Request with Autorization Header (Basic & Bearer).*
 - Implement `async/await` and `.then().catch()` to retrieve the response data in axios.
 
 
