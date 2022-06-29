@@ -18,26 +18,23 @@ Learners will understand:
 Learners will be able to:
 - Perform HTTP GET, POST, PUT, PATCH, and DELETE using Axios.
 - Perform HTTP Request with Autorization Header (Basic & Bearer).*
-- Implement `async/await` and `.then().catch()` to retrieve the response data in axios.
+- Implement `async...await` and `.then().catch()` to retrieve the response data in axios.
 
 
 ## Lesson Plan
 
 |Duration|What|How or Why|
 |--------|-----|-------|
-|- 5mins |Start zoom session|So that students can join early and start class on time|
-|15 mins|Self studies check-in|Encourage students to ask questions in regards to their self studies material.|
-|10 mins|I DO Part 1|Instructor demonstrates...|
-|10 mins|WE DO Part 1|Learners practice...|
-|10 mins|I DO Part 2|Instructor demonstrates...|
-|10 mins|I DO Part 2|Learners practice...|
-|5 mins| Break||
-|||**1 HR 00 MIN**|
-|10 mins|I DO Part 3| Instructor demonstrates...|
-|10 mins|WE DO part 3| Learners practice...|
-|10 mins|Assignment briefing|
-|||**1 HR 30 MIN**|
-|40 mins|Learners self attempt on assignments|
-|20 mins|Instructors walk through at least 1 question of the assignments|
-|||**END CLASS 2 HR 30 MIN**|
+|- 5mins | Start zoom session | So that students can join early and start class on time|
+| 15 mins |Self studies check-in | Encourage students to ask questions in regards to their self studies material. |
+| 30 mins | Concept + practical code-along | Part 1: Learn how to implement axios with .`then()...catch()` method |
+|||**50 MIN MARK**|
+| 20 mins | Concept + practical code-along | Part 2: Learn how to implement axios with .`async...await` method |
+| 10 mins | Break | |
+| 20 mins | Concept + practical code-along | Part 3: Integrate axios into a React application |
+|||**1 HR 40 MIN MARK**|
+| 10 mins | Assignment briefing |
+| 60 mins | **ASSIGNMENT**  | 
+| 10 mins | Assignment Demo | Walkthrough, discussion + Q & A | 
+|||**END CLASS 3 HR MARK**|
 
