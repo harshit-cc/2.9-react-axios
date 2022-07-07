@@ -1,4 +1,4 @@
-# 2.9: Axios, Asynchronous React and useEffect
+# 2.9 Axios, Asynchronous React and useEffect
 ## Preparation
 
 You will code-along from scratch for Part 1 of this lesson. Create a work 
