@@ -26,15 +26,15 @@ Learners will be able to:
 |Duration|What|How or Why|
 |--------|-----|-------|
 |- 5mins | Start zoom session | So that students can join early and start class on time|
-| 15 mins |Self studies check-in | Encourage students to ask questions in regards to their self studies material. |
+| 15 mins | Self studies check-in | Encourage students to ask questions in regards to their self studies material. |
 | 30 mins | Part 1 | How to implement axios with .`then()...catch()` method |
-|||**50 MIN MARK**|
-| 20 mins | Part 2 | How to implement axios with .`async...await` method |
 | 10 mins | Break | |
+|||**1 HOUR MARK**|
+| 20 mins | Part 2 | How to implement axios with .`async...await` method |
 | 20 mins | Part 3 | Integrate axios into a React application |
-|||**1 HR 40 MIN MARK**|
 | 10 mins |Assignment| Briefing |
-| 60 mins || **ASSIGNMENT**  | 
-| 10 mins || Walkthrough, discussion + Q & A | 
+|||**2 HOUR MARK**|
+| 45 mins || **ASSIGNMENT**  | 
+| 15 mins || Walkthrough, discussion + Q & A | 
 |||**END CLASS 3 HR MARK**|
 
