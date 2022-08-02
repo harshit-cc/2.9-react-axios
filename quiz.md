@@ -1,6 +1,6 @@
 # Quiz
 ## Axios, Async and useEffect Hook
-### Q1: Javascript is an asynchronous, non-blocking abd multi-threaded programming language.
+### Q1: Javascript is an asynchronous, non-blocking and multi-threaded programming language.
 
 - A: True
 - **B: False
@@ -45,3 +45,46 @@
 - C: `axios.post('/user)`
 - D: `axios.patch('/user)`
 
+---
+### Q7: What is the purpose of the `useEffect` hook in React?
+- A: Declares a state effect variable in the component.
+- B: Returns a side-effect object whose property is initialised to the passed argument.
+- C: Updates complex side-effect state logic in a component
+- **D: Triggers side-effect functions after component rendering
+
+---
+### Q8: What is the behaviour `useEffect` in the following code:
+```js
+useEffect(() => {
+  // Run some functions...
+}, [])
+```
+- A: Runs after every rendering
+- **B: Runs once after initial rendering
+- C: Runs once after initial rendering and after every rendering conditionally on state change
+- D: Does not run at all
+
+---
+### Q9: What is the behaviour `useEffect` in the following code:
+```js
+const [flag, setFlag] = useState(false);
+useEffect(() => {
+  // Run some functions...
+}, [flag])
+```
+- A: Runs after every rendering
+- B: Runs once after initial rendering
+- **C: Runs once after initial rendering and after every rendering conditionally on state change
+- D: Does not run at all
+
+---
+### Q8: What is the behaviour `useEffect` in the following code:
+```js
+useEffect(() => {
+  // Run some functions...
+})
+```
+- **A: Runs after every rendering
+- B: Runs once after initial rendering
+- C: Runs once after initial rendering and after every rendering conditionally on state change
+- D: Does not run at all
