@@ -294,7 +294,7 @@ import Table from './components/Table';
   }
   return (
     <button onClick={apiGet}>Load Products</button>
-    <Table list={products} /> 
+    {products && <Table list={products} />} 
     ...
   )
 ```
@@ -362,7 +362,7 @@ useEffect(() => {
 ```
 In the above code, `apiGet` will be called when the value of `myProp` changes. 
 
-The class componennt equivalent to `useEffect` hook are lifecycle methods:
+The class component equivalent to `useEffect` hook are lifecycle methods:
 - componentDidMount
 - componentDidUpdate 
 - componentWillUnmount
