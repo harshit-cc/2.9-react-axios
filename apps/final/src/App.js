@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <h1>Product List</h1>
       <button onClick={apiGet}>Load Products</button>
-      <Table list={products} />
+      { products && <Table list={products} /> }
       <AddForm handlerAddItem={apiPost} />
     </div>
   );
