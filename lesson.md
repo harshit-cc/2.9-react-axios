@@ -170,7 +170,7 @@ const API = axios.create({ baseURL: BASE_URL });
 
 A pre-condition to using `async..await` is that the awaiting function must be
 called from within an encapsulated `async` code block. You can implement an
-an IIFE (Immediately Invoked Arrow Function) in the function declaration:
+an IIFE (Immediately Invoked Function Expression) in the function declaration:
 
 ```js
 // GET request
