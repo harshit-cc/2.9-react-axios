@@ -18,33 +18,21 @@ There are two methods to implement asynchronous promises in Javascript:
 - then...catch 
 - async...await
 
-## Part 1: Integrating Axios into React
+## Part 1: Using Axios with `then()`
 
-To prepare for this section, copy the starter project from folder `apps\begin` from the 
-lesson repo into your working folder, e.g. `work`. We will integrate axios into a React
-app and interact with the backend database using the API.
+### Step 1: Create the Axios API Object
 
-### Step 1: Create Axios API Component
-
-Create a new file called `mockapi.js` to support the API in the `src/api` folder:
+In your work folder, create a new file `axios-then.js`. 
 
 ```js
-//mockapi.js
-import axios from 'axios';
+//axios-then.js
+const axios = require('axios');
 const BASE_URL = 'https://62ba9b04573ca8f8328762ca.mockapi.io';
-const mockAPI = axios.create({ baseURL: BASE_URL });
-
-export default mockAPI
+const API = axios.create({ baseURL: BASE_URL });
 ```
-The `BASE_URL` value will be the same as the one used in previous sections. You can support multiple APIs by writing similar API components in the `api` folder.
-
-### Step 2: Using Axios with `then()`
-
-### Part 1: HTTP GET Method
-
-To use the API, simply import the API component into any React module and reference 
-the API component. In this project, we will import the API into `App.js` and call a GET
-request on the API to download a product list from the server.
+We create an axios object with the base URL that points to an existing server
+that will respond with mock API data. A valid URL will be provided during the 
+session.
 
 The API understands HTTP commands that are sent from your frontend application.
 
@@ -55,33 +43,25 @@ The API understands HTTP commands that are sent from your frontend application.
 | Update | PUT | Replace the entire record with new data |
 | Delete | DELETE | Remove an existing record |
 
+### Step 2: HTTP GET Command
+
 The basic GET command simply requests the API to return a list of all existing
 records stored in the backend server.
 
 ```js
-// App.js
-import mockAPI from './api/mockapi`;
-
-function App() {
-  function apiGet() {
-    mockAPI.get('/product')
-      .then((response) => {
-        console.log('GET status:', response.status);
-        console.log('GET data:', response.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }
-  return (
-    <div className="App">
-      <h1>Product List</h1>
-      <button onClick={apiGet}>Load Products</button>
-    </div>
-  );
+function apiGet() {
+  API.get('/product')
+    .then((response) => {
+      console.log('GET status:', response.status);
+      console.log('GET data:', response.data);
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
 }
-```
 
+apiGet(); 
+```
 After sending the GET request, the process waits for either a valid `response` 
 is received from the server, or an `error` has occured. e.g. server not found. 
 Try forcing an error by using an invalid BASE_URL. The `.then()...catch()` 
@@ -103,22 +83,22 @@ You can also request the API to return a record by its ID number:
 /*
   GET request for single item referenced by ID
 */
-function apiGetId(id){
-  mockAPI.get(`/product/${id}`)
+function apiGetId(id) {
+  API.get(`/product/${id}`)
 ...
 }
+
+apiGet(5); 
 ```
 You must pass a valid ID to the function, otherwise the API will return an error.
 
-You can replace the apiGet method with the apiGetId to see the single item.
-
-### Part 2: HTTP POST Command
+### Step 3: HTTP POST Command
 
 To create a new item and add to the database.
 
 ```js
 function apiPost() {
-  mockAPI.post(`/product`)
+  API.post(`/product`)
     .then((response) => {
       console.log(response.data);
     })
@@ -126,11 +106,12 @@ function apiPost() {
       console.log(error.message);
     });
 }
+apiPost();
 ```
-There is no need to supply any parameter to the POST command for now as the ID will be 
+There is no need to supply any parameter to the POST command as the ID will be 
 created automatically by the backend.
 
-### Part 3: HTTP PUT Command
+### Step 4: HTTP PUT Command
 
 To edit an existing record in the database, you must provide:
 - a valid ID of the record
@@ -138,7 +119,7 @@ To edit an existing record in the database, you must provide:
   
 ```js
 function apiPut(id) {
-  mockAPI.put(`/product/${id}`, {
+  API.put(`/product/${id}`, {
       name: '*** NEW PRODUCT ***',
       quantity: 8,
       price: '88.88',
@@ -150,17 +131,15 @@ function apiPut(id) {
     console.log(error.message);
   });
 }
+apiPut(5);
 ```
-
-Try calling the method with any existing ID and see the effect.
-
-### Part 4: HTTP DELETE Command
+### Step 5: HTTP DELETE Command
 
 To remove an existing record from the database, simply provide the ID:
 
 ```js
 function apiDelete(id) {
-  mockAPI.delete(`/product/${id}`)
+  API.delete(`/product/${id}`)
     .then((response) => {
       console.log(response.data);
     })
@@ -170,17 +149,24 @@ function apiDelete(id) {
 }
 ```
 
-Try calling the method with any existing ID and see the effect.
-
 > As the server will take some time to respond to any data change requests,
-> allow some time before sending a GET request to view the updated database.
+> allow some time before sendinf a GET request to view the updated database.
 
-### Step 2: Using Axios with `async...await`
+## Part 2: Using Axios with `async...await`
 
 An alternative method for implementing asynchronous promises in JS is using
 the `await..async` statement pair.
 
-### Part 1: Using an IIFE
+Create a new JS file called `axios-await.js` with the same headers:
+
+```js
+//axios-await.js
+const axios = require('axios');
+const BASE_URL = 'https://62ba9b04573ca8f8328762ca.mockapi.io';
+const API = axios.create({ baseURL: BASE_URL });
+```
+
+### Step 1: Using an IIFE
 
 A pre-condition to using `async..await` is that the awaiting function must be
 called from within an encapsulated `async` code block. You can implement an
@@ -190,13 +176,13 @@ an IIFE (Immediately Invoked Function Expression) in the function declaration:
 // GET request
 function apiGet() {
   (async () => {
-    const response = await mockAPI.get('/product')
+    const response = await API.get('/product')
     console.log('GET status:', response.status);
     console.log('GET data:', response.data);
   }) ()
 }
 ```
-### Part 2: Using Arrow Functions
+### Step 2: Using Arrow Functions
 
 Alternatively, you can convert the apiGet function into an arrow function and
 encapsulate `async` around it. Here is how to do it with the second form 
@@ -204,7 +190,7 @@ of the GET request (with ID):
 
 ```js
 const apiGetId = async (id) => {
-  const response = await mockAPI(`/product/${id}`);
+  const response = await API(`/product/${id}`);
     console.log(response.data);    
 }
 ```
@@ -214,7 +200,7 @@ error handler:
 ```js
 const apiGetId = async (id) => {
   try {
-    const response = await mockAPI(`/product/${id}`);
+    const response = await API(`/product/${id}`);
       console.log(response.data);    
   } catch (error) {
     console.log(error.message);
@@ -223,12 +209,59 @@ const apiGetId = async (id) => {
 ```
 Test your code by invoking `getId()` and `getId(5)` after the function declarations.
 
-### Part 3: Convert Axios HTTP Requests to `async...await`
+### Step 3: Convert Axios HTTP Requests to `async...await`
 
 Convert the remaining POST, PUT and DELETE methods to use `async...await` on your own.
 
-### Step 3: Putting data on the page
+> The complete final code can be found in the `code` folder. Do try it yourself first!
 
+## Part 3: Integrating Axios into React
+
+To prepare for this section, copy the starter project from folder `apps\begin` from the 
+lesson repo into your working folder, e.g. `work`. We will integrate axios into a React
+app and interact with the backend database using the API.
+
+### Step 1: Create Axios API Component
+
+Create a new file called `mockapi.js` to support the API in the `src/api` folder:
+
+```js
+//mockapi.js
+import axios from 'axios';
+const BASE_URL = 'https://62ba9b04573ca8f8328762ca.mockapi.io';
+const mockAPI = axios.create({ baseURL: BASE_URL });
+
+export default mockAPI
+```
+The `BASE_URL` value will be the same as the one used in previous sections. You can support multiple APIs by writing similar API components in the `api` folder.
+
+### Step 2: Get Product List Using API
+
+To use the API, simply import the API component into any React module and reference 
+the API component. In this project, we will import the API into `App.js` and call a GET
+request on the API to download a product list from the server:
+
+```js
+// App.js
+import mockAPI from './api/mockapi`;
+
+function App() {
+  const apiGet = async () => {
+    try {
+      const response = await mockAPI.get(`/product/`);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  return (
+    <div className="App">
+      <h1>Product List</h1>
+      <button onClick={apiGet}>Load Products</button>
+    </div>
+  );
+}
+```
 At the moment, pressing the `Load` button simply logs the data on the console and
 not much else. Let's put some data on the page by creating a new component, `Table`.
 
@@ -237,7 +270,7 @@ not much else. Let's put some data on the page by creating a new component, `Tab
 function Table({ list }) {
   return (
     <div>
-      <p>{list && list[0].name}</p>
+      <p>{list[0].name}</p>
     </div>
   );
 }
@@ -261,7 +294,7 @@ import Table from './components/Table';
   }
   return (
     <button onClick={apiGet}>Load Products</button>
-    <Table list={products} /> 
+    {products && <Table list={products} />} 
     ...
   )
 ```
@@ -300,7 +333,7 @@ function Table({ list }) {
 Pressing the `Load` button should refresh the table with the latest data
 currently available on the backend server.
 
-### Step 4: Update Product List with `useEffect`
+### Step 2: Update Product List with `useEffect`
 
 We can trigger any React component to load new API data whenever the application
 starts with the `useEffect` hook. 
@@ -334,7 +367,7 @@ The class component equivalent to `useEffect` hook are lifecycle methods:
 - componentDidUpdate 
 - componentWillUnmount
 
-### Step 5: Add New Product
+### Step 3: Add New Product
 
 Implement the ADD method to enter a new record into the database via the API.
 Create a new component, `AddForm.js`:
@@ -377,7 +410,7 @@ export default AddForm
 
 ```
 
-Add the new component, modify the apiPOST handler to add the new product and send it from `App.js` via props:
+Add the new component and send the apiPOST handler from `App.js` via props:
 
 ```js
 import AddForm from './components/AddForm';
