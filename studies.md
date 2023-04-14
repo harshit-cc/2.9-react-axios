@@ -14,8 +14,8 @@ Technical knowledge is vast. Timebox yourself for 3 hours to work on the followi
 - [HTTP request and response](https://www.webnots.com/what-is-http/)
 - [HTTP methods](https://restfulapi.net/http-methods/)
 - [Different API requests](https://medium.com/adg-vit/xhr-vs-fetch-vs-ajax-vs-axios-for-api-requests-f06e6bd56b32)
-- [Promises](https://javascript.info/promise-basics)
-- [Async/Await](https://javascript.info/async-await)
+- [Promises: Then/Catch](https://javascript.info/promise-basics)
+- [Promises: Async/Await](https://javascript.info/async-await)
 
 ### Helpful Links (References)
 
