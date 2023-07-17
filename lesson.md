@@ -8,7 +8,7 @@ package before you begin.
 ```
 npm install axios
 ```
-To prepare for this section, copy the starter project from folder `apps\begin` from the 
+To prepare for this section, copy the starter project from folder `code\begin` from the 
 lesson repo into your working folder, e.g. `work`. We will integrate axios into a React
 app and interact with the backend database using the API.
 
@@ -32,7 +32,7 @@ const mockAPI = axios.create({ baseURL: BASE_URL });
 
 export default mockAPI
 ```
-> INSTRUCTOR NOTE: mockapi has a hard limit of 100 requestst per resource endpoint. Create
+> INSTRUCTOR NOTE: mockapi has a hard limit of 100 requests per resource endpoint. Create
 >    your own api BASE_URL or using an alternative api server, e.g. json-server if the 
 >    sample endpoint endpoint stops working 
 
@@ -381,7 +381,7 @@ The API POST command accepts a second parameter that specifies the values
 of the new record to be added into the database. When the parameter it is 
 left out, the backend will generate random values for the new record.
 
-> The final implementation can be found in the `apps/final` folder
+> The final implementation can be found in the `code/final` folder
 
 ## Coding Challenge
 
