@@ -3,7 +3,7 @@
 ## Dependencies
 
 Refer to the following markdown file for the respective sections of the class:
-- [Self Studies](https://github.com/su-ntu-ctp/6m-software-2.1-react-intro/blob/main/reference.md#29-axios-asynchronous-and-useeffect)
+- [Self Studies](studies.md)
 - [Lesson](./lesson.md)
 - [Assignment](./assignment.md)
 
