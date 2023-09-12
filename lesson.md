@@ -297,7 +297,7 @@ import { useState, useEffect } from 'react';
 ```
 Don't forget to add the square brackets `[]` as the second argument of the `useEffect`
 function to ensure that the `apiGet` function is called only on the first render. If you
-include any props or state values in betwen the `[]`, the hook will trigger when that 
+include any props or state values in between the `[]`, the hook will trigger when that 
 value changes. For example:
 
 ```js
